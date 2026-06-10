@@ -1,0 +1,19 @@
+MINDCARE FULL PROJECT - CALM LANDING PAGE VERSION
+
+This is the full project folder for the app whose home screen shows:
+- MindCare Home
+- Your calm space.
+- Chat. Breathe. Call. Recover.
+- Start Messenger
+- Upload a song
+
+This is NOT the other WhatsApp-style project folder.
+This copy keeps the full project structure: backend, frontend, ai-service, database, built frontend dist, package files, and installed dependencies if they existed in the original project.
+
+Main files:
+- frontend/src/App.jsx
+- frontend/src/style.css
+- backend/src/server.js
+- frontend/dist
+
+Note: temporary tunnel logs and cloudflared.exe were excluded. The original project .env files remain only if they existed in the source folder.

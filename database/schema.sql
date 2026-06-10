@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS mindcare_ai;
+USE mindcare_ai;
+CREATE TABLE users (id VARCHAR(64) PRIMARY KEY, name VARCHAR(100), email VARCHAR(150) UNIQUE, password_hash VARCHAR(255), role ENUM('user','therapist','admin') DEFAULT 'user', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE user_settings (user_id VARCHAR(64) PRIMARY KEY, theme VARCHAR(20), language VARCHAR(50), notifications BOOLEAN, consent_text BOOLEAN, consent_voice BOOLEAN, consent_media BOOLEAN, emergency_contact VARCHAR(100), preferred_therapist VARCHAR(64));
+CREATE TABLE chat_messages (id VARCHAR(64) PRIMARY KEY, user_id VARCHAR(64), user_message TEXT, bot_reply TEXT, mood VARCHAR(50), sentiment VARCHAR(50), risk VARCHAR(50), confidence INT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE mood_records (id VARCHAR(64) PRIMARY KEY, user_id VARCHAR(64), source VARCHAR(50), mood VARCHAR(50), sentiment VARCHAR(50), risk VARCHAR(50), confidence INT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE therapists (id VARCHAR(64) PRIMARY KEY, name VARCHAR(100), title VARCHAR(100), specialty TEXT, rating DECIMAL(2,1), available BOOLEAN, languages VARCHAR(150));
+CREATE TABLE appointments (id VARCHAR(64) PRIMARY KEY, user_id VARCHAR(64), therapist_id VARCHAR(64), type VARCHAR(30), appointment_date DATE, appointment_time TIME, status VARCHAR(30), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE alerts (id VARCHAR(64) PRIMARY KEY, user_id VARCHAR(64), message TEXT, risk VARCHAR(50), recipient VARCHAR(150), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE journals (id VARCHAR(64) PRIMARY KEY, user_id VARCHAR(64), text TEXT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);

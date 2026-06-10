@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+backend/.env
+frontend/.env
+ai-service/.venv/
+__pycache__/
+*.pyc
+localtunnel.*.log
+*tunnel*.log
+serveo*.log
+localhostrun*.log
+cloudflared.exe

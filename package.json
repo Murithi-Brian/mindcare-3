@@ -1,0 +1,10 @@
+{
+  "name": "mindcare-ai-final-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\""
+  },
+  "devDependencies": {"concurrently": "^9.1.2"}
+}
